@@ -1,0 +1,30 @@
+---
+# Sets up a complete graphical development environment for frontend developing
+#
+
+- hosts: default
+  gather_facts: yes
+
+  vars_files:
+    - main.yml
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt: update_cache=yes cache_valid_time=3600
+      sudo: yes
+
+  tasks:
+    - name: install zsh
+      apt: name=zsh
+    - name: install htop
+      apt: name=htop
+#    - name: install gnome
+#      apt: name=gnome
+
+# TODO
+# 1. Set ZSH as default shell
+# 2. Gnome passwordless login
+# 3. nodejs
+# 4. rbenv
+
+  handlers:
