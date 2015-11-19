@@ -12,19 +12,25 @@
     - name: Update apt cache if needed.
       apt: update_cache=yes cache_valid_time=3600
       sudo: yes
+    - name: Setup nodejs repository
+      shell: curl -sL https://deb.nodesource.com/setup_5.x | bash -
+      sudo: yes
 
   tasks:
     - name: install zsh
       apt: name=zsh
     - name: install htop
       apt: name=htop
+    - name: install node
+      apt: name=nodejs
+    - name: install tmux
+      apt: name=tmux
 #    - name: install gnome
 #      apt: name=gnome
 
 # TODO
 # 1. Set ZSH as default shell
 # 2. Gnome passwordless login
-# 3. nodejs
-# 4. rbenv
+# 3. rbenv
 
   handlers:
