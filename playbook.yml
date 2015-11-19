@@ -3,9 +3,8 @@
 #
 
 # TODO
-# 1. Set ZSH as default shell
-# 2. Gnome passwordless login
-# 3. rbenv
+# 1. Gnome passwordless login
+# 2. rbenv
 
 - hosts: default
   gather_facts: yes
@@ -13,3 +12,6 @@
   tasks:
     - include: tasks/nodejs.yml
     - include: tasks/packages.yml
+    - include: tasks/users.yml
+    - include: tasks/desktop.yml
+    - include: tasks/rbenv.yml

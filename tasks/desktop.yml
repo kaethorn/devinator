@@ -1,5 +1,11 @@
 ---
 # Sets up desktop environment
 
-- name: install gnome
+- name: Install GDM
+  apt: name=gdm
+
+- name: Install Gnome
   apt: name=gnome
+
+- name: Enable Gnome
+  service: name=gdm enabled=yes state=started

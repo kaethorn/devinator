@@ -1,0 +1,11 @@
+---
+# Sets up user account
+
+- name: Create user account
+  user: name=falko system=yes groups="sudo" shell=/bin/zsh password=$6$mtXc4Q7D5s$Pi50szA4/cOyujVb8aGqG62BaBf2VDjSY1rynxsUj58mUhc7pOZ/TzEIKGyxN9152oUF/yqxPHtSzbksoMbjz1
+
+# FIXME make the source a parameter to `vagrant provision`.
+- name: Populate dot files
+  copy: src=~/drive/config/ dest=/home/falko
+  become: yes
+  become_user: falko

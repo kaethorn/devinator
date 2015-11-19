@@ -1,0 +1,17 @@
+---
+# Sets up rbenv and installs the latest version of Ruby
+
+- name: Install rbenv
+  git: repo=https://github.com/sstephenson/rbenv.git dest=/home/falko/.rbenv
+  become: yes
+  become_user: falko
+
+- name: Install ruby-build
+  git: repo=https://github.com/sstephenson/ruby-build.git dest=/home/falko/.rbenv/plugins/ruby-build
+  become: yes
+  become_user: falko
+
+- name: Install Ruby
+  shell: rbenv install 2.2.0
+  become: yes
+  become_user: falko

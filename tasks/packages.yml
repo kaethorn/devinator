@@ -1,9 +1,11 @@
 ---
 # Installs various packages
 
-- name: install zsh
+- name: Install zsh
   apt: name=zsh
-- name: install htop
+
+- name: Install htop
   apt: name=htop
-- name: install tmux
+
+- name: Install tmux
   apt: name=tmux
