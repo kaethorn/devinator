@@ -1,0 +1,5 @@
+---
+# Sets up desktop environment
+
+- name: install gnome
+  apt: name=gnome
